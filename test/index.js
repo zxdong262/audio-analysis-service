@@ -7,7 +7,9 @@ const {
     name
   }
 } = require('../src/server/app/config')
-const base = `http://${host}:${port}`
+
+const base = process.env.BASEURL || `http://${host}:${port}`
+const sampleUrl = process.env.SMAPLEURL || `${base}/sample.mp3`
 
 describe(name, function() {
 
@@ -22,16 +24,18 @@ describe(name, function() {
     })
       .then(res => res.json())
       .then(res => {
+        console.log(res)
         expect(!!res.text).equal(true)
         done()
       })
+      .catch(done)
   })
 
   it('audio-url-analysis', function(done) {
     fetch(`${base}/audio-url-analysis`, {
       method: 'post',
       body: JSON.stringify({
-        url: `${base}/sample.mp3`
+        url: sampleUrl
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -43,13 +47,14 @@ describe(name, function() {
         expect(!!res.text).equal(true)
         done()
       })
+      .catch(done)
   })
 
   it('audio-url-to-text', function(done) {
     fetch(`${base}/audio-url-to-text`, {
       method: 'post',
       body: JSON.stringify({
-        url: `${base}/sample.mp3`
+        url: sampleUrl
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -60,5 +65,6 @@ describe(name, function() {
         expect(res).includes('name is')
         done()
       })
+      .catch(done)
   })
 })
