@@ -57,7 +57,7 @@ exclude:
   - serverless.sample.yml
 
 functions:
-  bot:
+  audio:
     handler: handler.audio
     timeout: 300
 #    The following are a few example events you can configure
