@@ -1,8 +1,8 @@
 # audio-analysis-service
-audio analysis service.
+Audio convert/analysis service.
 
 ## Features
-- Read audio stream from url and transcript to text with google cloud api
+- Read audio stream from url, convert to flac format, transcript to text with google cloud api
 - Analysis text with google cloud NLP api
 
 ## Prerequisites
@@ -43,7 +43,7 @@ pm2 start bin/pm2.yml
 ```
 
 ## Use
-- `/text-analysis?text=text` for text analysis, including **Sentiment**, **Syntax:**, **Classification:**, **Entity sentiment:**.
+- `/text-analysis?text=text` for text analysis, including **Sentiment**, **Syntax**, **Classification**, **Entity sentiment**.
 - `/audio-url-to-text` transcript audio url to text with google cloud ai.
 - `/audio-url-analysis` for audio url analysis, will transform to flac first, then transcript to text, then use google cloud ai to anlaysis.
 
