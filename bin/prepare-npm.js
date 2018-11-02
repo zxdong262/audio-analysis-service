@@ -1,0 +1,5 @@
+const {exec, echo, rm} = require('shelljs')
+echo('compiling npm files')
+rm('-rf', 'dist')
+exec('./node_modules/.bin/babel src/lamda/lib/* --out-dir dist')
+rm('-rf', 'dist/hub.js')

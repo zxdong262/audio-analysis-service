@@ -1,6 +1,6 @@
 {
   "name": "audio-analysis-service",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "audio analysis service",
   "main": "src/lamda/lib/url-analysis.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "watch": "cd lamda && serverless logs -f audio -t",
     "deploy-to-aws": "node bin/deploy-to-aws",
     "update-to-aws": "node bin/update-to-aws",
-    "prepare-ffmpeg": "node bin/prepare-ffmpeg",
+    "prepublishOnly": "node bin/prepare-npm",
     "u": "npm run update-to-aws",
     "s:watch": "cd lamda && ../node_modules/.bin/serverless logs -f hello -t",
     "lint": "./node_modules/.bin/eslint --max-warnings 0 --ext .js  src",

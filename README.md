@@ -112,10 +112,10 @@ npm i audio-analysis-service
 ```
 
 ```js
-import {textAnalysis} from 'audio-analysis-service/src/lamda/lib/text-analysis'
-import {speech2text} from 'audio-analysis-service/src/lamda/lib/url2text'
-import {toFlac} from 'audio-analysis-service/src/lamda/lib/voice-to-flac'
-import urlAnalysis from 'audio-analysis-service/src/lamda/lib/url-analysis'
+import {textAnalysis} from 'audio-analysis-service/dist/text-analysis'
+import {speech2text} from 'audio-analysis-service/dist/url2text'
+import {toFlac} from 'audio-analysis-service/dist/voice-to-flac'
+import urlAnalysis from 'audio-analysis-service/dist/url-analysis'
 ```
 
 ## Test

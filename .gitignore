@@ -16,7 +16,7 @@ jspm_packages
 .DS_Store
 *.rdb
 /.happypack/
-/app/assets/
+/dist/
 # config etc
 .idea/
 /config.js
