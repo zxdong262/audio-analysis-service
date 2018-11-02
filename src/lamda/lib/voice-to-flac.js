@@ -5,8 +5,7 @@
  */
 
 import ffmpeg from 'fluent-ffmpeg'
-import {log} from './log'
-import handleError from '../common/error-handler'
+import {log} from './common'
 import {Writable} from 'stream'
 import fetch from 'node-fetch'
 
@@ -84,5 +83,7 @@ export async function toFlac (url, headers) {
     headers
   })
     .then(handleResponse)
-    .catch(handleError)
+    .catch(e => {
+      console.log(e)
+    })
 }

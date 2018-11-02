@@ -5,7 +5,7 @@
 
 import { speech2text } from './url2text'
 import { textAnalysis } from './text-analysis'
-import result from './response'
+import {result} from './common'
 
 export default async (event) => {
   const {

@@ -42,7 +42,7 @@ yarn prod-server
 pm2 start bin/pm2.yml
 ```
 
-## Use
+## Use as service
 - `/text-analysis?text=text` for text analysis, including **Sentiment**, **Syntax**, **Classification**, **Entity sentiment**.
 - `/audio-url-to-text` transcript audio url to text with google cloud ai.
 - `/audio-url-analysis` for audio url analysis, will transform to flac first, then transcript to text, then use google cloud ai to anlaysis.
@@ -102,9 +102,22 @@ pm2 start bin/pm2.yml
         done()
       })
   })
-
-
 ```
+
+
+## Use as lib
+
+```bash
+npm i audio-analysis-service
+```
+
+```js
+import {textAnalysis} from 'audio-analysis-service/src/lamda/lib/text-analysis'
+import {speech2text} from 'audio-analysis-service/src/lamda/lib/url2text'
+import {toFlac} from 'audio-analysis-service/src/lamda/lib/voice-to-flac'
+import urlAnalysis from 'audio-analysis-service/src/lamda/lib/url-analysis'
+```
+
 ## Test
 ```bash
 yarn test

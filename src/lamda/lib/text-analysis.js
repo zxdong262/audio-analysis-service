@@ -4,14 +4,12 @@
 
 // Imports the Google Cloud client library
 import language from '@google-cloud/language'
-import {log, debug} from './log'
-import result from './response'
+import {log, debug, result} from './common'
 
 // Instantiates a client
 const client = new language.LanguageServiceClient()
 
 export async function textAnalysis (text) {
-  debug('analysis text:', text)
   const document = {
     content: text,
     type: 'PLAIN_TEXT'
