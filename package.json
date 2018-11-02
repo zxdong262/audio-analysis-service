@@ -1,8 +1,8 @@
 {
   "name": "audio-analysis-service",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "audio analysis service",
-  "main": "src/lamda/lib/url-analysis.js",
+  "main": "dist/url-analysis.js",
   "scripts": {
     "test": "mocha",
     "build": "node bin/build",
